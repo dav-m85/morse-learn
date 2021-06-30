@@ -92,7 +92,11 @@ class GameSpace {
 
     this.game.downEvent = function(e) {
       if (this.inputReady) {
+        this.inputReady = false;
         this.checkMatch(e);
+        setTimeout(() => {
+          this.inputReady = true;
+        }, 600);
       }
     };
 
@@ -209,8 +213,6 @@ class GameSpace {
     let letter = word.myLetters[word.currentLetterIndex];
     let typedLetter;
 
-    this.inputReady = false;
-
     if (data === ' ') {
       typedLetter = document.getElementById('input').value;
       typedLetter = typedLetter.trim();
@@ -284,9 +286,7 @@ class GameSpace {
           }
         }
 
-        setTimeout(() => {
-          this.inputReady = true;
-        }, 600);
+        
       }
     }
   }
