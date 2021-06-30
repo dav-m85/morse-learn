@@ -88,9 +88,7 @@ class GameSpace {
     this.newLetterArray.sort();
     this.loadLetters();
 
-    document.removeEventListener('textInput', this.game.downEvent);
-
-    this.game.downEvent = function(e) {
+    this.game.kb.setHandler((e) => {
       if (this.inputReady) {
         this.inputReady = false;
         this.checkMatch(e);
@@ -98,9 +96,7 @@ class GameSpace {
           this.inputReady = true;
         }, 600);
       }
-    };
-
-    document.addEventListener('textInput', this.game.downEvent.bind(this));
+    })
 
     setTimeout(() => {
       for (let i = 0; i < config.app.howManyWordsToStart; i++) {
@@ -207,22 +203,10 @@ class GameSpace {
     this.currentWords[this.currentWords.length - 1].setPosition(myStartX);
   }
 
-  checkMatch(e) {
-    const data = e.data;
+  checkMatch(typedLetter) {
     let word = this.currentWords[this.currentWordIndex];
     let letter = word.myLetters[word.currentLetterIndex];
-    let typedLetter;
-
-    if (data === ' ') {
-      typedLetter = document.getElementById('input').value;
-      typedLetter = typedLetter.trim();
-      typedLetter = typedLetter[typedLetter.length - 1];
-    } else {
-      typedLetter = data;
-    }
-
-    typedLetter = typedLetter.toLowerCase();
-
+    
     if (typeof typedLetter !== 'undefined') {
       if (typedLetter === letter) {
         this.mistakeCount = 0;

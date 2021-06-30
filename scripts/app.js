@@ -16,12 +16,13 @@ import { TitleState } from './title-state';
 import { IntroState } from './intro-state';
 import { GameState } from './game-state';
 import * as config from './config';
+import { Input } from './input';
 
 class App {
 
   constructor() {
     this.game = null;
-    this.downEvent = null;
+    this.kb = null;
     this.modalShow = false;
 
     // Handle clicking of modal
@@ -100,6 +101,10 @@ class App {
   }
 
   create() {
+    // Start input
+    this.game.kb = new Input()
+
+    //
     this.game.stage.backgroundColor = config.app.backgroundColor;
     this.game.stage.smoothed = config.app.smoothed;
     GameApp.determineScale();

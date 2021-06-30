@@ -39,15 +39,12 @@ class TitleState {
     }
 
     // Only start if not desktop and not iOS
-    if (!this.game.device.desktop) {
-      this.game.downEvent = () => {
-        document.getElementById('input').focus();
-        this.start();
-        this.hasStarted = true;
-      };
-
-      document.addEventListener('textInput', this.game.downEvent);
-    }
+    // if (!this.game.device.desktop) {
+    this.game.kb.setHandler(() => {
+      this.start();
+      this.hasStarted = true;
+    })
+    // }
 
   }
 
@@ -124,7 +121,7 @@ class TitleState {
     title.font = config.typography.font;
 
     // Only show start button on mobile/tablet
-    if (!this.game.device.desktop && this.game.device.android) {
+    //if (!this.game.device.desktop && this.game.device.android) {
       const startText = ((config.GLOBALS.isTouch) ? 'Tap to Start' : 'Press any button to Start');
       let startButton = this.game.add.text(this.game.world.centerX, this.game.world.centerY + config.title.startButtonOffset, startText, {
         align: 'center'
@@ -137,15 +134,15 @@ class TitleState {
       // Reating animation for start button
       const startButtonTween = this.game.add.tween(startButton).to({ alpha: 0.4 }, 600, 'Linear', true, 0, -1);
       startButtonTween.yoyo(true, 0);
-    }
+    //}
 
     // Show fallback messag if desktop/iOS
     let ctaText;
-    if (!this.game.device.desktop && this.game.device.android) {
+    // if (!this.game.device.desktop && this.game.device.android) {
       ctaText = 'Works with Gboard Beta\nGet setup here';
-    } else {
-      ctaText = 'Sorry, this experiment is for\nMorse on Gboard and is only\navailable on Android at this time.\n\nLearn more and get the source code';
-    }
+    // } else {
+    //   ctaText = 'Sorry, this experiment is for\nMorse on Gboard and is only\navailable on Android at this time.\n\nLearn more and get the source code';
+    // }
 
     let cta = this.game.add.text(this.game.world.centerX, this.game.world.centerY + (!this.game.device.desktop ? config.title.ctaOffset : config.title.ctaOffset * 0.7), ctaText, {
       align: 'center'
