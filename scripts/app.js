@@ -16,7 +16,7 @@ import { TitleState } from './title-state';
 import { IntroState } from './intro-state';
 import { GameState } from './game-state';
 import * as config from './config';
-import { Input } from './input';
+import { Input } from './input-morse';
 
 class App {
 
