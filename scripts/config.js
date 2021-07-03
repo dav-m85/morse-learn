@@ -68,9 +68,9 @@ const config = {
     hintTextSize: 39,
   },
   animations: {
-    SLIDE_START_DELAY: 400,
-    SLIDE_END_DELAY: 600,
-    SLIDE_TRANSITION: 600,
+    SLIDE_START_DELAY: 100,
+    SLIDE_END_DELAY: 300,
+    SLIDE_TRANSITION: 300,
   }
 };
 
