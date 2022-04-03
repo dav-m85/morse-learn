@@ -120,48 +120,48 @@ class App {
 
   preload() {
     // Images
-    this.game.load.image('a', 'assets/images/png/Archery.png');
-    this.game.load.image('b', 'assets/images/png/Banjo.png');
-    this.game.load.image('c', 'assets/images/png/Candy.png');
-    this.game.load.image('d', 'assets/images/png/Dog.png');
-    this.game.load.image('e', 'assets/images/png/Eye.png');
-    this.game.load.image('f', 'assets/images/png/Firetruck.png');
-    this.game.load.image('g', 'assets/images/png/Giraffe.png');
-    this.game.load.image('h', 'assets/images/png/Hippo.png');
-    this.game.load.image('i', 'assets/images/png/Insect.png');
-    this.game.load.image('j', 'assets/images/png/Jet.png');
-    this.game.load.image('k', 'assets/images/png/Kite.png');
-    this.game.load.image('l', 'assets/images/png/Laboratory.png');
-    this.game.load.image('m', 'assets/images/png/Mustache.png');
-    this.game.load.image('n', 'assets/images/png/Net.png');
-    this.game.load.image('o', 'assets/images/png/Orchestra.png');
-    this.game.load.image('p', 'assets/images/png/Paddle.png');
-    this.game.load.image('q', 'assets/images/png/Quarterback.png');
-    this.game.load.image('r', 'assets/images/png/Robot.png');
-    this.game.load.image('s', 'assets/images/png/Submarine.png');
-    this.game.load.image('t', 'assets/images/png/Tape.png');
-    this.game.load.image('u', 'assets/images/png/Unicorn.png');
-    this.game.load.image('v', 'assets/images/png/Vacuum.png');
-    this.game.load.image('w', 'assets/images/png/Wand.png');
-    this.game.load.image('x', 'assets/images/png/X-ray.png');
-    this.game.load.image('y', 'assets/images/png/Yard.png');
-    this.game.load.image('z', 'assets/images/png/Zebra.png');
-    this.game.load.image('close', 'assets/images/close.svg');
-    this.game.load.image('badge', 'assets/images/badge.svg');
+    this.game.load.image('a', 'images/png/Archery.png');
+    this.game.load.image('b', 'images/png/Banjo.png');
+    this.game.load.image('c', 'images/png/Candy.png');
+    this.game.load.image('d', 'images/png/Dog.png');
+    this.game.load.image('e', 'images/png/Eye.png');
+    this.game.load.image('f', 'images/png/Firetruck.png');
+    this.game.load.image('g', 'images/png/Giraffe.png');
+    this.game.load.image('h', 'images/png/Hippo.png');
+    this.game.load.image('i', 'images/png/Insect.png');
+    this.game.load.image('j', 'images/png/Jet.png');
+    this.game.load.image('k', 'images/png/Kite.png');
+    this.game.load.image('l', 'images/png/Laboratory.png');
+    this.game.load.image('m', 'images/png/Mustache.png');
+    this.game.load.image('n', 'images/png/Net.png');
+    this.game.load.image('o', 'images/png/Orchestra.png');
+    this.game.load.image('p', 'images/png/Paddle.png');
+    this.game.load.image('q', 'images/png/Quarterback.png');
+    this.game.load.image('r', 'images/png/Robot.png');
+    this.game.load.image('s', 'images/png/Submarine.png');
+    this.game.load.image('t', 'images/png/Tape.png');
+    this.game.load.image('u', 'images/png/Unicorn.png');
+    this.game.load.image('v', 'images/png/Vacuum.png');
+    this.game.load.image('w', 'images/png/Wand.png');
+    this.game.load.image('x', 'images/png/X-ray.png');
+    this.game.load.image('y', 'images/png/Yard.png');
+    this.game.load.image('z', 'images/png/Zebra.png');
+    this.game.load.image('close', 'images/close.svg');
+    this.game.load.image('badge', 'images/badge.svg');
 
     // Video
-    this.game.load.video('intro', 'assets/videos/intro.mp4');
+    this.game.load.video('intro', 'videos/intro.mp4');
 
     // Audio
-    this.game.load.audio('period', 'assets/sounds/period.mp3');
-    this.game.load.audio('dash', 'assets/sounds/dash.mp3');
+    this.game.load.audio('period', 'sounds/period.mp3');
+    this.game.load.audio('dash', 'sounds/dash.mp3');
   }
 
   // Show about modal
   showModal() {
     if (this.modalShow) {
       window.location.hash = '#about';
-      document.getElementById('button').innerHTML = '<img src="assets/images/close.svg">';
+      document.getElementById('button').innerHTML = '<img src="images/close.svg">';
       document.getElementById('overlay').classList.add('open');
     } else {
       window.location.hash = '';

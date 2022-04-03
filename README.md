@@ -5,11 +5,12 @@ I've forked Google Creative's Lab original work to have it running on **desktop*
 
 Android custom keyboard is **not needed** here.
 
+Using parcel for bundling, much speedier.
+
 ## Usage
 ```
 yarn; // install dependencies
 yarn start; // start the local budo webserver
-yarn build; // prep files for production
 ```
 
 ## License

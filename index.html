@@ -3,17 +3,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no" />
     <title>Morse - Learn</title>
-    <link rel="stylesheet" href="build/style.css">
+    <link rel="stylesheet" href="styles/style.scss">
     <link rel="icon" href="assets/images/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600,700" rel="stylesheet">
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99014794-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-99014794-3');
-    </script>
   </head>
   <body>
     <input id="input" type="password" autofocus autocomplete="new-password"/>
@@ -31,6 +23,6 @@
       </div>
     </div>
     <script src="third-party/phaser/phaser.js"></script>
-    <script src="build/bundle.js"></script>
+    <script type="module" src="scripts/app.js"></script>
   </body>
 </html>
